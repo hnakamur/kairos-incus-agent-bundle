@@ -1,0 +1,9 @@
+[tasks.build]
+run = '''
+docker build -t karios-incus-agent-bundle .
+'''
+
+[tasks.save]
+run = '''
+docker save -o karios-incus-agent-bundle-docker-image.tar karios-incus-agent-bundle
+'''
