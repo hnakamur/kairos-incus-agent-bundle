@@ -6,10 +6,13 @@ DefaultDependencies=no
 
 [Service]
 Type=notify
-WorkingDirectory=-/run/incus_agent
-ExecStartPre=TARGET/systemd/incus-agent-setup
-ExecStart=/run/incus_agent/incus-agent
+WorkingDirectory=-/var/run/incus_agent
+ExecStartPre=/usr/local/bin/incus-agent-setup
+ExecStart=/var/run/incus_agent/incus-agent
 Restart=on-failure
 RestartSec=5s
 StartLimitInterval=60
 StartLimitBurst=10
+
+[Install]
+WantedBy=multi-user.target

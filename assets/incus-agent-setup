@@ -1,6 +1,6 @@
 #!/bin/sh
 set -eu
-PREFIX="/run/incus_agent"
+PREFIX="/var/run/incus_agent"
 CDROM="/dev/disk/by-label/incus-agent"
 
 # Functions.
