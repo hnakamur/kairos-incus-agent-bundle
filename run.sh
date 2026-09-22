@@ -6,7 +6,7 @@ BIN=/usr/local/bin
 
 # Copy the incus-agent-setup script to /usr/local/bin (mutable path in Kairos)
 mkdir -p $BIN
-cp incus-agent-setup $BIN/incus-agent-setup
+cp assets/incus-agent-setup $BIN/incus-agent-setup
 chmod +x "$BIN/incus-agent-setup"
 
 # Detect init system and setup accordingly
