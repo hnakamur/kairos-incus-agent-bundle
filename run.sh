@@ -4,10 +4,10 @@ set -ex
 
 BIN=/usr/local/bin
 
-# Copy the incus-agent binary to /usr/local/bin (mutable path in Kairos)
+# Copy the incus-agent-setup script to /usr/local/bin (mutable path in Kairos)
 mkdir -p $BIN
-cp incus-agent $BIN/incus-agent
-chmod +x "$BIN/incus-agent"
+cp incus-agent-setup $BIN/incus-agent-setup
+chmod +x "$BIN/incus-agent-setup"
 
 # Detect init system and setup accordingly
 if command -v systemctl >/dev/null 2>&1; then
@@ -18,6 +18,7 @@ if command -v systemctl >/dev/null 2>&1; then
     ln -sf /etc/systemd/system/incus-agent.service /etc/systemd/system/multi-user.target.wants/incus-agent.service
 
     if systemctl is-system-running >/dev/null 2>&1; then
+        systemctl daemon-reload
         systemctl start incus-agent
         systemctl enable incus-agent
     else
