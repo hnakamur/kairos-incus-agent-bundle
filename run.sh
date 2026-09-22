@@ -4,10 +4,10 @@ set -ex
 
 BIN=/usr/local/bin
 
-# Copy the incus-agent-setup script to /usr/local/bin (mutable path in Kairos)
+# Copy the incus-agent binary to /usr/local/bin (mutable path in Kairos)
 mkdir -p $BIN
-cp incus-agent-setup $BIN/incus-agent-setup
-chmod +x "$BIN/incus-agent-setup"
+cp incus-agent $BIN/incus-agent
+chmod +x "$BIN/incus-agent"
 
 # Detect init system and setup accordingly
 if command -v systemctl >/dev/null 2>&1; then

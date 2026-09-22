@@ -7,8 +7,7 @@ DefaultDependencies=no
 [Service]
 Type=notify
 WorkingDirectory=-/var/run/incus_agent
-ExecStartPre=/usr/local/bin/incus-agent-setup
-ExecStart=/var/run/incus_agent/incus-agent
+ExecStart=/usr/local/bin/incus-agent
 Restart=on-failure
 RestartSec=5s
 StartLimitInterval=60
